@@ -1,11 +1,17 @@
 import React from 'react';
-import Hello from './Hello.jsx';
+//import Footer from './footer.jsx';
+import Header from './header.jsx';
+import {BrowserRouter as Router, Redirect, Switch, Route, Link}  from "react-router-dom";
+import Body from './body.jsx';
+import Footer from './footer.jsx';
 
 const App = () => (
-  <div>
-    <h1>Welcome!</h1>
-    <Hello />
-  </div>
+
+  <span>
+    <Header />
+    <Body /><br/><br/><br/><br/><br/>
+  <Footer />
+  </span>
 );
 
 export default App;
