@@ -46,7 +46,7 @@ body {
   right:0;
   left:0;
   bottom: 0;
-  top:calc(100% + 180px);
+  top:100vh;
   position: absolute;
   padding-bottom: 90px;
   padding-top: 10px;
