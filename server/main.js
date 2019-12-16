@@ -3,31 +3,32 @@ import MyProgress from '/imports/api/myprogress.js';
 import '/imports/server/methods.js';
 import '/imports/server/publish.js';
 import '../imports/api/Accounts-config.js';
+import moment from 'moment';
+const date = moment().format('MM-YYYY');
 
-function insertjunk(title, url) {
-  MyProgress.insert({ title, url, createdAt: new Date() });
+console.log(date);
+function insertinit(title , link, skill1 ,
+  skill2 ,skill3 ,skill4 , skill5, skill6, gitlink,) {
+  MyProgress.insert({ title, link,skill1 , skill2 ,
+    skill3 ,skill4 , skill5, skill6 ,createdAt: date ,gitlink,});
 }
 Meteor.startup(() => {
   // If the MyProgress collection is empty, add some data.
   if (MyProgress.find().count() === 0) {
-    insertjunk(
-      'Do the Tutorial',
-      'https://www.meteor.com/tutorials/react/creating-an-app'
-    );
+    insertinit(
+      'Do the Tutorial',"#" ,'skill1' , 'skill2' ,'skill3' ,'skill4' , 'skill5', 'skill6'
+    ,"#");
 
-    insertjunk(
-      'Follow the Guide',
-      'http://guide.meteor.com'
-    );
+    insertinit(
+      'Follow the Guide',"#" ,'skill1' , 'skill2' ,'skill3' ,'skill4' , 'skill5', 'skill6'
+    ,"#");
 
-    insertjunk(
-      'Read the Docs',
-      'https://docs.meteor.com'
-    );
+    insertinit(
+      'Read the Docs',"#" , 'skill1' , 'skill2' ,'skill3' ,'skill4' , 'skill5', 'skill6'
+    ,"#");
 
-    insertjunk(
-      'Discussions',
-      'https://forums.meteor.com'
-    );
+    insertinit(
+      'Discussions', "#" , 'skill1' , 'skill2' ,'skill3' ,'skill4' , 'skill5', 'skill6'
+    ,"#");
   }
 });

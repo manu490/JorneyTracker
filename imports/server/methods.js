@@ -1,29 +1,23 @@
 import MyProgress from '/imports/api/myprogress.js';
+import moment from 'moment';
+const date = moment().format('MM-YYYY');
 
 Meteor.methods({
-  addProject(title,url){
+  addProject(title,skill1,skill2,skill3,skill4,skill5,skill6){
     MyProgress.insert({
       title:title,
-      url:url,
-      completed: false ,
-      createdAt: new Date(),
+      createdAt: date,
+      skill1: skill1,
+      skill2: skill2,
+      skill3: skill3,
+      skill4: skill4,
+      skill5: skill5,
+      skill6: skill6,
       user:Meteor.userId(),
     });
   },
   removeProject(project){
   MyProgress.remove({_id:project});
-},
-
-CheckboxToggle(project_id,status){
-  var project = MyProgress.findOne({_id:project_id});
-  if(status==null){
-    MyProgress.update({_id:project_id},{$set:{complete:true}});
-  }
-  else{
-  MyProgress.update(project_id,{
-      $set:{complete:!status}
-    });
-  }
 },
 
 

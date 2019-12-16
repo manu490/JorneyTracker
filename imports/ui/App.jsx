@@ -10,7 +10,7 @@ const App = () => (
   <span>
     <Header />
     <Body /><br/><br/><br/><br/><br/>
-  <Footer />
+    <Footer />
   </span>
 );
 

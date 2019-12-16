@@ -10,7 +10,9 @@ const history = createBrowserHistory();
 Meteor.startup(() => {
   render(
   <Router history={history}>
-  <Route exact path="/" component={App} />
-  <Route exact path="/restricted-admin-only" component={AdminLogin} />
+  <Switch>
+  <Route exact path="/Home" component={App} />
+  <Route exact path="/" component={AdminLogin} />
+  </Switch>
   </Router>  , document.getElementById('react-target'));
 });

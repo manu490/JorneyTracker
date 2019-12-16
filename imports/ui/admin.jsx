@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Redirect, Switch,
                  Route, Link}  from "react-router-dom";
 import { withTracker } from 'meteor/react-meteor-data';
 
+
 class AdminLogin extends Component{
   componentDidMount() {
     // Use Meteor Blaze to render login buttons
@@ -17,6 +18,9 @@ class AdminLogin extends Component{
     // Clean up Blaze view
     Blaze.remove(this.view);
   }
+  onSubmit = () => {
+         this.props.history.push('/Home');
+  }
   render(){
     if (!this.props.loggedin) {
       return(
@@ -24,11 +28,12 @@ class AdminLogin extends Component{
         <div className="AdminLogin">
         <br/>
         <br/><span ref="container"/>
-
+        <button className="btn-default continue-btn" onClick={this.onSubmit}>
+        Continue Without loggingIn</button>
       </div>);
       }
       return (
-        <Redirect exact to="/" />
+        <Redirect refresh ={true} exact to="/Home" />
         );
   }
 }

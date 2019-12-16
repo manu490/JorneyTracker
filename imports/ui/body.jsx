@@ -8,13 +8,12 @@ import Timeline from './Timeline.jsx';
 class Body extends Component {
 
   render() {
-
       return (
         <div>
           <h2>My Journey !</h2><br/>
           <div>
           {this.props.loggedin ? <AddnewProject /> : null}
-          <TimelineContainer />
+          <Timeline />
           </div>
         </div>
       );
