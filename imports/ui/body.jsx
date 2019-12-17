@@ -10,7 +10,7 @@ class Body extends Component {
   render() {
       return (
         <div>
-          <h2>My Journey !</h2><br/>
+        <br/>
           <div>
           {this.props.loggedin ? <AddnewProject /> : null}
           <Timeline />
