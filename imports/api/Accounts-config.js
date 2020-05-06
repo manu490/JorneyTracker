@@ -2,7 +2,7 @@ import { Accounts } from 'meteor/accounts-base';
 
 
 AccountsTemplates.configure({
-    forbidClientAccountCreation : true,
+    forbidClientAccountCreation : false,
 
 });
 /*Accounts.onLogin(function(){
